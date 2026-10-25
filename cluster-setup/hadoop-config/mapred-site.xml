@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Copy to $HADOOP_HOME/etc/hadoop/ on ALL nodes -->
+<configuration>
+  <!-- Run MapReduce jobs on YARN (not locally) -->
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+  <property>
+    <name>yarn.app.mapreduce.am.env</name>
+    <value>HADOOP_MAPRED_HOME=/home/hadoop/hadoop</value>
+  </property>
+  <property>
+    <name>mapreduce.map.env</name>
+    <value>HADOOP_MAPRED_HOME=/home/hadoop/hadoop</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.env</name>
+    <value>HADOOP_MAPRED_HOME=/home/hadoop/hadoop</value>
+  </property>
+  <!-- Memory sized for lab PCs with 4-8 GB RAM -->
+  <property>
+    <name>yarn.app.mapreduce.am.resource.mb</name>
+    <value>1024</value>
+  </property>
+  <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>1024</value>
+  </property>
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>1024</value>
+  </property>
+  <property>
+    <name>mapreduce.jobhistory.address</name>
+    <value>master:10020</value>
+  </property>
+  <property>
+    <name>mapreduce.jobhistory.webapp.address</name>
+    <value>master:19888</value>
+  </property>
+</configuration>

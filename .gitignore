@@ -1,0 +1,20 @@
+# Raw dataset is downloaded with data/download_data.sh (not committed - too big / licence)
+data/raw/
+
+# Intermediate outputs
+output/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

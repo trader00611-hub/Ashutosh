@@ -1,0 +1,6 @@
+# Shell/Python scripts must keep Linux line endings, or they fail on Ubuntu with "bad interpreter"
+*.sh   text eol=lf
+*.py   text eol=lf
+*.xml  text eol=lf
+workers text eol=lf
+*.ps1  text eol=crlf

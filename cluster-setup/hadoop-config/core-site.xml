@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Copy to $HADOOP_HOME/etc/hadoop/ on ALL nodes (master, worker1, worker2) -->
+<configuration>
+  <!-- Address of the HDFS NameNode (runs on master) -->
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://master:9000</value>
+  </property>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/home/hadoop/hadoopdata/tmp</value>
+  </property>
+</configuration>

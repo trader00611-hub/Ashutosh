@@ -1,0 +1,727 @@
+{
+  "generated_at": "2026-10-25 09:31 UTC",
+  "engine": "Local Python test mode (same logic as Spark job)",
+  "min_ratings_for_top": 50,
+  "summary": {
+    "total_ratings": 100836,
+    "total_users": 610,
+    "rated_movies": 9724,
+    "avg_rating": 3.5016,
+    "first_rating_year": 1996,
+    "last_rating_year": 2018,
+    "total_movies": 9742,
+    "total_genres": 19
+  },
+  "genre_stats": [
+    {
+      "genre": "Film-Noir",
+      "avg_rating": 3.9201,
+      "num_ratings": 870,
+      "num_movies": 85
+    },
+    {
+      "genre": "War",
+      "avg_rating": 3.8083,
+      "num_ratings": 4859,
+      "num_movies": 381
+    },
+    {
+      "genre": "Documentary",
+      "avg_rating": 3.7978,
+      "num_ratings": 1219,
+      "num_movies": 438
+    },
+    {
+      "genre": "Crime",
+      "avg_rating": 3.6583,
+      "num_ratings": 16681,
+      "num_movies": 1196
+    },
+    {
+      "genre": "Drama",
+      "avg_rating": 3.6562,
+      "num_ratings": 41928,
+      "num_movies": 4349
+    },
+    {
+      "genre": "Mystery",
+      "avg_rating": 3.6325,
+      "num_ratings": 7674,
+      "num_movies": 573
+    },
+    {
+      "genre": "Animation",
+      "avg_rating": 3.6299,
+      "num_ratings": 6988,
+      "num_movies": 610
+    },
+    {
+      "genre": "IMAX",
+      "avg_rating": 3.6183,
+      "num_ratings": 4145,
+      "num_movies": 158
+    },
+    {
+      "genre": "Western",
+      "avg_rating": 3.5839,
+      "num_ratings": 1930,
+      "num_movies": 167
+    },
+    {
+      "genre": "Musical",
+      "avg_rating": 3.5637,
+      "num_ratings": 4138,
+      "num_movies": 333
+    },
+    {
+      "genre": "Adventure",
+      "avg_rating": 3.5086,
+      "num_ratings": 24161,
+      "num_movies": 1262
+    },
+    {
+      "genre": "Romance",
+      "avg_rating": 3.5065,
+      "num_ratings": 18124,
+      "num_movies": 1591
+    },
+    {
+      "genre": "Thriller",
+      "avg_rating": 3.4937,
+      "num_ratings": 26452,
+      "num_movies": 1889
+    },
+    {
+      "genre": "Fantasy",
+      "avg_rating": 3.491,
+      "num_ratings": 11834,
+      "num_movies": 778
+    },
+    {
+      "genre": "Sci-Fi",
+      "avg_rating": 3.4557,
+      "num_ratings": 17243,
+      "num_movies": 980
+    },
+    {
+      "genre": "Action",
+      "avg_rating": 3.448,
+      "num_ratings": 30635,
+      "num_movies": 1828
+    },
+    {
+      "genre": "Children",
+      "avg_rating": 3.413,
+      "num_ratings": 9208,
+      "num_movies": 664
+    },
+    {
+      "genre": "Comedy",
+      "avg_rating": 3.3847,
+      "num_ratings": 39053,
+      "num_movies": 3753
+    },
+    {
+      "genre": "Horror",
+      "avg_rating": 3.2582,
+      "num_ratings": 7291,
+      "num_movies": 977
+    }
+  ],
+  "rating_distribution": [
+    {
+      "rating": 0.5,
+      "count": 1370
+    },
+    {
+      "rating": 1.0,
+      "count": 2811
+    },
+    {
+      "rating": 1.5,
+      "count": 1791
+    },
+    {
+      "rating": 2.0,
+      "count": 7551
+    },
+    {
+      "rating": 2.5,
+      "count": 5550
+    },
+    {
+      "rating": 3.0,
+      "count": 20047
+    },
+    {
+      "rating": 3.5,
+      "count": 13136
+    },
+    {
+      "rating": 4.0,
+      "count": 26818
+    },
+    {
+      "rating": 4.5,
+      "count": 8551
+    },
+    {
+      "rating": 5.0,
+      "count": 13211
+    }
+  ],
+  "ratings_per_year": [
+    {
+      "year": 1996,
+      "count": 6040,
+      "avg_rating": 3.5359
+    },
+    {
+      "year": 1997,
+      "count": 1916,
+      "avg_rating": 3.7276
+    },
+    {
+      "year": 1998,
+      "count": 507,
+      "avg_rating": 3.4359
+    },
+    {
+      "year": 1999,
+      "count": 2439,
+      "avg_rating": 3.7724
+    },
+    {
+      "year": 2000,
+      "count": 10061,
+      "avg_rating": 3.3925
+    },
+    {
+      "year": 2001,
+      "count": 3922,
+      "avg_rating": 3.5122
+    },
+    {
+      "year": 2002,
+      "count": 3478,
+      "avg_rating": 3.607
+    },
+    {
+      "year": 2003,
+      "count": 4014,
+      "avg_rating": 3.4994
+    },
+    {
+      "year": 2004,
+      "count": 3279,
+      "avg_rating": 3.5061
+    },
+    {
+      "year": 2005,
+      "count": 5813,
+      "avg_rating": 3.4315
+    },
+    {
+      "year": 2006,
+      "count": 4059,
+      "avg_rating": 3.4879
+    },
+    {
+      "year": 2007,
+      "count": 7114,
+      "avg_rating": 3.309
+    },
+    {
+      "year": 2008,
+      "count": 4351,
+      "avg_rating": 3.6567
+    },
+    {
+      "year": 2009,
+      "count": 4158,
+      "avg_rating": 3.3925
+    },
+    {
+      "year": 2010,
+      "count": 2301,
+      "avg_rating": 3.4635
+    },
+    {
+      "year": 2011,
+      "count": 1690,
+      "avg_rating": 3.784
+    },
+    {
+      "year": 2012,
+      "count": 4656,
+      "avg_rating": 3.6413
+    },
+    {
+      "year": 2013,
+      "count": 1664,
+      "avg_rating": 3.8774
+    },
+    {
+      "year": 2014,
+      "count": 1439,
+      "avg_rating": 3.5108
+    },
+    {
+      "year": 2015,
+      "count": 6616,
+      "avg_rating": 3.5138
+    },
+    {
+      "year": 2016,
+      "count": 6703,
+      "avg_rating": 3.6863
+    },
+    {
+      "year": 2017,
+      "count": 8198,
+      "avg_rating": 3.3488
+    },
+    {
+      "year": 2018,
+      "count": 6418,
+      "avg_rating": 3.3891
+    }
+  ],
+  "decade_stats": [
+    {
+      "decade": 1900,
+      "num_movies": 3,
+      "num_ratings": 8,
+      "avg_rating": 3.3125
+    },
+    {
+      "decade": 1910,
+      "num_movies": 7,
+      "num_ratings": 8,
+      "avg_rating": 3.3125
+    },
+    {
+      "decade": 1920,
+      "num_movies": 37,
+      "num_ratings": 125,
+      "avg_rating": 3.74
+    },
+    {
+      "decade": 1930,
+      "num_movies": 134,
+      "num_ratings": 687,
+      "avg_rating": 3.7336
+    },
+    {
+      "decade": 1940,
+      "num_movies": 194,
+      "num_ratings": 1101,
+      "avg_rating": 3.8706
+    },
+    {
+      "decade": 1950,
+      "num_movies": 277,
+      "num_ratings": 1784,
+      "avg_rating": 3.845
+    },
+    {
+      "decade": 1960,
+      "num_movies": 399,
+      "num_ratings": 2858,
+      "avg_rating": 3.8081
+    },
+    {
+      "decade": 1970,
+      "num_movies": 498,
+      "num_ratings": 4995,
+      "avg_rating": 3.7757
+    },
+    {
+      "decade": 1980,
+      "num_movies": 1175,
+      "num_ratings": 12912,
+      "avg_rating": 3.5184
+    },
+    {
+      "decade": 1990,
+      "num_movies": 2209,
+      "num_ratings": 37087,
+      "avg_rating": 3.4346
+    },
+    {
+      "decade": 2000,
+      "num_movies": 2848,
+      "num_ratings": 29766,
+      "avg_rating": 3.4657
+    },
+    {
+      "decade": 2010,
+      "num_movies": 1930,
+      "num_ratings": 9487,
+      "avg_rating": 3.4888
+    }
+  ],
+  "top_rated_movies": [
+    {
+      "title": "Shawshank Redemption, The (1994)",
+      "year": 1994,
+      "genres": "Crime|Drama",
+      "avg_rating": 4.429,
+      "num_ratings": 317
+    },
+    {
+      "title": "Godfather, The (1972)",
+      "year": 1972,
+      "genres": "Crime|Drama",
+      "avg_rating": 4.2891,
+      "num_ratings": 192
+    },
+    {
+      "title": "Fight Club (1999)",
+      "year": 1999,
+      "genres": "Action|Crime|Drama|Thriller",
+      "avg_rating": 4.2729,
+      "num_ratings": 218
+    },
+    {
+      "title": "Cool Hand Luke (1967)",
+      "year": 1967,
+      "genres": "Drama",
+      "avg_rating": 4.2719,
+      "num_ratings": 57
+    },
+    {
+      "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
+      "year": 1964,
+      "genres": "Comedy|War",
+      "avg_rating": 4.268,
+      "num_ratings": 97
+    },
+    {
+      "title": "Rear Window (1954)",
+      "year": 1954,
+      "genres": "Mystery|Thriller",
+      "avg_rating": 4.2619,
+      "num_ratings": 84
+    },
+    {
+      "title": "Godfather: Part II, The (1974)",
+      "year": 1974,
+      "genres": "Crime|Drama",
+      "avg_rating": 4.2597,
+      "num_ratings": 129
+    },
+    {
+      "title": "Departed, The (2006)",
+      "year": 2006,
+      "genres": "Crime|Drama|Thriller",
+      "avg_rating": 4.2523,
+      "num_ratings": 107
+    },
+    {
+      "title": "Goodfellas (1990)",
+      "year": 1990,
+      "genres": "Crime|Drama",
+      "avg_rating": 4.25,
+      "num_ratings": 126
+    },
+    {
+      "title": "Casablanca (1942)",
+      "year": 1942,
+      "genres": "Drama|Romance",
+      "avg_rating": 4.24,
+      "num_ratings": 100
+    },
+    {
+      "title": "Dark Knight, The (2008)",
+      "year": 2008,
+      "genres": "Action|Crime|Drama|IMAX",
+      "avg_rating": 4.2383,
+      "num_ratings": 149
+    },
+    {
+      "title": "Usual Suspects, The (1995)",
+      "year": 1995,
+      "genres": "Crime|Mystery|Thriller",
+      "avg_rating": 4.2377,
+      "num_ratings": 204
+    },
+    {
+      "title": "Princess Bride, The (1987)",
+      "year": 1987,
+      "genres": "Action|Adventure|Comedy|Fantasy|Romance",
+      "avg_rating": 4.2324,
+      "num_ratings": 142
+    },
+    {
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "year": 1977,
+      "genres": "Action|Adventure|Sci-Fi",
+      "avg_rating": 4.2311,
+      "num_ratings": 251
+    },
+    {
+      "title": "Schindler's List (1993)",
+      "year": 1993,
+      "genres": "Drama|War",
+      "avg_rating": 4.225,
+      "num_ratings": 220
+    }
+  ],
+  "most_rated_movies": [
+    {
+      "title": "Forrest Gump (1994)",
+      "year": 1994,
+      "genres": "Comedy|Drama|Romance|War",
+      "avg_rating": 4.1641,
+      "num_ratings": 329
+    },
+    {
+      "title": "Shawshank Redemption, The (1994)",
+      "year": 1994,
+      "genres": "Crime|Drama",
+      "avg_rating": 4.429,
+      "num_ratings": 317
+    },
+    {
+      "title": "Pulp Fiction (1994)",
+      "year": 1994,
+      "genres": "Comedy|Crime|Drama|Thriller",
+      "avg_rating": 4.1971,
+      "num_ratings": 307
+    },
+    {
+      "title": "Silence of the Lambs, The (1991)",
+      "year": 1991,
+      "genres": "Crime|Horror|Thriller",
+      "avg_rating": 4.1613,
+      "num_ratings": 279
+    },
+    {
+      "title": "Matrix, The (1999)",
+      "year": 1999,
+      "genres": "Action|Sci-Fi|Thriller",
+      "avg_rating": 4.1924,
+      "num_ratings": 278
+    },
+    {
+      "title": "Star Wars: Episode IV - A New Hope (1977)",
+      "year": 1977,
+      "genres": "Action|Adventure|Sci-Fi",
+      "avg_rating": 4.2311,
+      "num_ratings": 251
+    },
+    {
+      "title": "Jurassic Park (1993)",
+      "year": 1993,
+      "genres": "Action|Adventure|Sci-Fi|Thriller",
+      "avg_rating": 3.75,
+      "num_ratings": 238
+    },
+    {
+      "title": "Braveheart (1995)",
+      "year": 1995,
+      "genres": "Action|Drama|War",
+      "avg_rating": 4.0316,
+      "num_ratings": 237
+    },
+    {
+      "title": "Terminator 2: Judgment Day (1991)",
+      "year": 1991,
+      "genres": "Action|Sci-Fi",
+      "avg_rating": 3.971,
+      "num_ratings": 224
+    },
+    {
+      "title": "Schindler's List (1993)",
+      "year": 1993,
+      "genres": "Drama|War",
+      "avg_rating": 4.225,
+      "num_ratings": 220
+    },
+    {
+      "title": "Fight Club (1999)",
+      "year": 1999,
+      "genres": "Action|Crime|Drama|Thriller",
+      "avg_rating": 4.2729,
+      "num_ratings": 218
+    },
+    {
+      "title": "Toy Story (1995)",
+      "year": 1995,
+      "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+      "avg_rating": 3.9209,
+      "num_ratings": 215
+    },
+    {
+      "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+      "year": 1980,
+      "genres": "Action|Adventure|Sci-Fi",
+      "avg_rating": 4.2156,
+      "num_ratings": 211
+    },
+    {
+      "title": "Usual Suspects, The (1995)",
+      "year": 1995,
+      "genres": "Crime|Mystery|Thriller",
+      "avg_rating": 4.2377,
+      "num_ratings": 204
+    },
+    {
+      "title": "American Beauty (1999)",
+      "year": 1999,
+      "genres": "Drama|Romance",
+      "avg_rating": 4.0564,
+      "num_ratings": 204
+    }
+  ],
+  "top_users": [
+    {
+      "userId": 414,
+      "num_ratings": 2698,
+      "avg_rating": 3.392
+    },
+    {
+      "userId": 599,
+      "num_ratings": 2478,
+      "avg_rating": 2.6421
+    },
+    {
+      "userId": 474,
+      "num_ratings": 2108,
+      "avg_rating": 3.399
+    },
+    {
+      "userId": 448,
+      "num_ratings": 1864,
+      "avg_rating": 2.8474
+    },
+    {
+      "userId": 274,
+      "num_ratings": 1346,
+      "avg_rating": 3.2359
+    },
+    {
+      "userId": 610,
+      "num_ratings": 1302,
+      "avg_rating": 3.6886
+    },
+    {
+      "userId": 68,
+      "num_ratings": 1260,
+      "avg_rating": 3.2337
+    },
+    {
+      "userId": 380,
+      "num_ratings": 1218,
+      "avg_rating": 3.6732
+    },
+    {
+      "userId": 606,
+      "num_ratings": 1115,
+      "avg_rating": 3.6574
+    },
+    {
+      "userId": 288,
+      "num_ratings": 1055,
+      "avg_rating": 3.146
+    }
+  ],
+  "mapreduce_genre_avg": [
+    {
+      "genre": "Film-Noir",
+      "avg_rating": 3.9201,
+      "num_ratings": 870
+    },
+    {
+      "genre": "War",
+      "avg_rating": 3.8083,
+      "num_ratings": 4859
+    },
+    {
+      "genre": "Documentary",
+      "avg_rating": 3.7978,
+      "num_ratings": 1219
+    },
+    {
+      "genre": "Crime",
+      "avg_rating": 3.6583,
+      "num_ratings": 16681
+    },
+    {
+      "genre": "Drama",
+      "avg_rating": 3.6562,
+      "num_ratings": 41928
+    },
+    {
+      "genre": "Mystery",
+      "avg_rating": 3.6325,
+      "num_ratings": 7674
+    },
+    {
+      "genre": "Animation",
+      "avg_rating": 3.6299,
+      "num_ratings": 6988
+    },
+    {
+      "genre": "IMAX",
+      "avg_rating": 3.6183,
+      "num_ratings": 4145
+    },
+    {
+      "genre": "Western",
+      "avg_rating": 3.5839,
+      "num_ratings": 1930
+    },
+    {
+      "genre": "Musical",
+      "avg_rating": 3.5637,
+      "num_ratings": 4138
+    },
+    {
+      "genre": "Adventure",
+      "avg_rating": 3.5086,
+      "num_ratings": 24161
+    },
+    {
+      "genre": "Romance",
+      "avg_rating": 3.5065,
+      "num_ratings": 18124
+    },
+    {
+      "genre": "Thriller",
+      "avg_rating": 3.4937,
+      "num_ratings": 26452
+    },
+    {
+      "genre": "Fantasy",
+      "avg_rating": 3.491,
+      "num_ratings": 11834
+    },
+    {
+      "genre": "Sci-Fi",
+      "avg_rating": 3.4557,
+      "num_ratings": 17243
+    },
+    {
+      "genre": "Action",
+      "avg_rating": 3.448,
+      "num_ratings": 30635
+    },
+    {
+      "genre": "Children",
+      "avg_rating": 3.413,
+      "num_ratings": 9208
+    },
+    {
+      "genre": "Comedy",
+      "avg_rating": 3.3847,
+      "num_ratings": 39053
+    },
+    {
+      "genre": "Horror",
+      "avg_rating": 3.2582,
+      "num_ratings": 7291
+    }
+  ]
+}

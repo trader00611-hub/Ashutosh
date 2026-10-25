@@ -1,0 +1,8 @@
+# Append these lines to /etc/hosts on ALL THREE machines (sudo nano /etc/hosts).
+# Replace the IPs with the real ones - find each PC's IP with:  hostname -I
+# IMPORTANT: also delete/comment the line "127.0.1.1 <hostname>" on each machine,
+# otherwise Hadoop daemons bind to localhost and workers cannot connect.
+
+192.168.1.10   master
+192.168.1.11   worker1
+192.168.1.12   worker2

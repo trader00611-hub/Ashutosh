@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Copy to $HADOOP_HOME/etc/hadoop/ on ALL nodes -->
+<configuration>
+  <!-- Each block is stored on 2 machines (we have 2 DataNodes) -->
+  <property>
+    <name>dfs.replication</name>
+    <value>2</value>
+  </property>
+  <!-- Used on master (NameNode metadata) -->
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>file:///home/hadoop/hadoopdata/hdfs/namenode</value>
+  </property>
+  <!-- Used on workers (actual data blocks) -->
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>file:///home/hadoop/hadoopdata/hdfs/datanode</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address</name>
+    <value>master:9870</value>
+  </property>
+  <property>
+    <name>dfs.namenode.secondary.http-address</name>
+    <value>master:9868</value>
+  </property>
+  <!-- Workers on a home/college LAN may not have reverse DNS -->
+  <property>
+    <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
+    <value>false</value>
+  </property>
+</configuration>

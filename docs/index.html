@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Rating Analysis | Hadoop + Spark</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <div>
+      <p class="eyebrow">CSBB 422 Big Data Analytics · Lab Project</p>
+      <h1>Movie Rating Analysis</h1>
+      <p class="subtitle">
+        Average ratings per genre and other insights from the MovieLens dataset, computed on a
+        3-node Hadoop cluster with <strong>Hadoop MapReduce</strong> and <strong>Apache Spark on YARN</strong>.
+      </p>
+      <p class="meta" id="meta">Loading results…</p>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button">Toggle theme</button>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#overview">Overview</a>
+    <a href="#genres">Genres</a>
+    <a href="#ratings">Ratings</a>
+    <a href="#movies">Movies</a>
+    <a href="#users">Users</a>
+    <a href="#verify">MapReduce vs Spark</a>
+    <a href="#architecture">Architecture</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div id="errorBox"></div>
+
+  <section id="overview">
+    <h2>Dataset overview</h2>
+    <p class="section-note">MovieLens "ml-latest-small" (GroupLens Research), stored in HDFS on the cluster.</p>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section id="genres">
+    <h2>Average rating per genre</h2>
+    <p class="section-note">The main project goal. A movie with several genres counts toward each of them.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Average rating by genre</h3>
+        <p class="card-note">Scale 0.5–5. The axis is zoomed in to show the differences between genres.</p>
+        <div class="chart-box tall"><canvas id="genreAvgChart" aria-label="Average rating by genre"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Number of ratings by genre</h3>
+        <p class="card-note">How much data stands behind each average.</p>
+        <div class="chart-box tall"><canvas id="genreCountChart" aria-label="Number of ratings by genre"></canvas></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Genre table</h3>
+      <p class="card-note">Type to filter genres.</p>
+      <input class="search" id="genreSearch" type="search" placeholder="Search genre…">
+      <div class="table-scroll"><table id="genreTable"></table></div>
+    </div>
+  </section>
+
+  <section id="ratings">
+    <h2>Rating behaviour</h2>
+    <p class="section-note">How users rate and how the activity changed over time.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Rating distribution</h3>
+        <p class="card-note">Number of ratings given at each star value.</p>
+        <div class="chart-box"><canvas id="distChart" aria-label="Rating distribution"></canvas></div>
+        <details><summary>View as table</summary><div class="table-scroll"><table id="distTable"></table></div></details>
+      </div>
+      <div class="card">
+        <h3>Ratings submitted per year</h3>
+        <p class="card-note">Year the rating was made (from the rating's timestamp).</p>
+        <div class="chart-box"><canvas id="yearChart" aria-label="Ratings submitted per year"></canvas></div>
+        <details><summary>View as table</summary><div class="table-scroll"><table id="yearTable"></table></div></details>
+      </div>
+      <div class="card">
+        <h3>Average rating by release decade</h3>
+        <p class="card-note">Do older movies get rated higher? Decade comes from the year in the movie title.</p>
+        <div class="chart-box"><canvas id="decadeChart" aria-label="Average rating by release decade"></canvas></div>
+        <details><summary>View as table</summary><div class="table-scroll"><table id="decadeTable"></table></div></details>
+      </div>
+      <div class="card">
+        <h3>Movies rated per release decade</h3>
+        <p class="card-note">Number of distinct movies from each decade that received ratings.</p>
+        <div class="chart-box"><canvas id="decadeCountChart" aria-label="Movies rated per release decade"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="movies">
+    <h2>Movies</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Top rated movies</h3>
+        <p class="card-note" id="topRatedNote">Highest average rating.</p>
+        <div class="table-scroll"><table id="topRatedTable"></table></div>
+      </div>
+      <div class="card">
+        <h3>Most rated movies</h3>
+        <p class="card-note">Movies with the most ratings.</p>
+        <div class="table-scroll"><table id="mostRatedTable"></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="users">
+    <h2>Most active users</h2>
+    <div class="card">
+      <p class="card-note">The 10 users who submitted the most ratings, and how generous they are.</p>
+      <div class="table-scroll"><table id="usersTable"></table></div>
+    </div>
+  </section>
+
+  <section id="verify">
+    <h2>MapReduce vs Spark</h2>
+    <p class="section-note">
+      The genre averages were computed twice: once by the Hadoop Streaming MapReduce job and once by Spark.
+      Matching values show both engines produce the same answer.
+    </p>
+    <div class="card"><div class="table-scroll"><table id="verifyTable"></table></div></div>
+  </section>
+
+  <section id="architecture">
+    <h2>System architecture</h2>
+    <p class="section-note">Data flow from raw CSV files to this dashboard.</p>
+    <div class="pipeline">
+      <div class="stage"><div class="step">STEP 1</div><h4>Ingest</h4><p>Download MovieLens CSVs and upload them to HDFS (<code>hdfs dfs -put</code>).</p></div>
+      <div class="arrow">→</div>
+      <div class="stage"><div class="step">STEP 2</div><h4>MapReduce</h4><p>Hadoop Streaming job (Python mapper/reducer) computes average rating per genre.</p></div>
+      <div class="arrow">→</div>
+      <div class="stage"><div class="step">STEP 3</div><h4>Spark on YARN</h4><p>PySpark job joins ratings with movies and runs all the analytics.</p></div>
+      <div class="arrow">→</div>
+      <div class="stage"><div class="step">STEP 4</div><h4>Results</h4><p>Output saved to HDFS and exported as <code>results.json</code>.</p></div>
+      <div class="arrow">→</div>
+      <div class="stage"><div class="step">STEP 5</div><h4>Dashboard</h4><p>This web page (HTML + Chart.js), hosted on GitHub Pages.</p></div>
+    </div>
+    <div class="cluster">
+      <div class="node"><h4>Master node (PC 1)</h4><ul><li>HDFS NameNode</li><li>Secondary NameNode</li><li>YARN ResourceManager</li><li>Spark driver (spark-submit)</li></ul></div>
+      <div class="node"><h4>Worker node 1 (PC 2)</h4><ul><li>HDFS DataNode</li><li>YARN NodeManager</li><li>Map/Reduce tasks, Spark executors</li></ul></div>
+      <div class="node"><h4>Worker node 2 (PC 3)</h4><ul><li>HDFS DataNode</li><li>YARN NodeManager</li><li>Map/Reduce tasks, Spark executors</li></ul></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span id="footerEngine"></span><br>
+    Dataset: F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History and Context.
+    ACM Transactions on Interactive Intelligent Systems 5, 4. GroupLens Research, University of Minnesota.
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
